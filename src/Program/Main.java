@@ -6,7 +6,6 @@ import Jogo.Tabuleiro;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		Tabuleiro game = new Tabuleiro();
 		
@@ -28,7 +27,9 @@ public class Main {
 				
 				game.ver_tabuleiro();
 				contador++;
+				
 			}
+			
 			else {
 				System.out.println("Jogador 2");
 				System.out.print("Digite o local para jogar O (1-3): ");
@@ -40,6 +41,14 @@ public class Main {
 				game.ver_tabuleiro();
 				contador++;
 			}
+			
+			char vencedor = game.verificarVencedor();
+			
+			if (vencedor != ' ') {
+				System.out.println("O vencedor foi o jogaor '" + vencedor + "'");
+				break;
+			}
+
 		}
 		
 		
