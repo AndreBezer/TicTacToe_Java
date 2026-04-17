@@ -1,7 +1,7 @@
 package Jogo;
 
 public class Tabuleiro {
-	
+	public int contador = 0;
 	char[][] tabuleiro = {
 			{' ', ' ', ' '},
 			{' ', ' ', ' '},
@@ -19,7 +19,14 @@ public class Tabuleiro {
 	}
 		
 	public void registar_jogada(int i, int j, char peca) {
-		tabuleiro[i][j] = peca;
+		if (tabuleiro[i][j] != ' '){
+			System.out.println("Posição ja ocupada!");
+			System.out.println("Tente novamente");
+		}
+		else{
+			tabuleiro[i][j] = peca;
+			contador+=1;
+		}
 	}
 	
 	public char verificarVencedor() {
